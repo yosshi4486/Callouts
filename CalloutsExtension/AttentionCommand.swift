@@ -23,6 +23,11 @@ final class AttentionCommand : CalloutsCommand {
                                                     callouts: callouts)
             
             calloutsInserter.insert()
+            
+            sources.selections[0] = XCSourceTextRange(start: .init(line: strategy.insertionLine!,
+                                                                   column: sources.selection.end.column + String(describing: callouts).count - 1),
+                                                      end: .init(line: strategy.insertionLine!,
+                                                                 column: sources.selection.end.column + String(describing: callouts).count - 1))
             completionHandler(nil)
         } catch {
             completionHandler(error)
