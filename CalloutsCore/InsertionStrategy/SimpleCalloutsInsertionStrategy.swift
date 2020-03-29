@@ -12,7 +12,16 @@ import Foundation
 public struct SimpleCalloutsInsertionStrategy : CalloutsInsertionStrategy {
     
     public init(sources: InsertionSources) {
-        self.insertionLine = sources.selection.start.line
+        let lines: [String] = (sources.lines as! [String])
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+        
+        let selectedLine = sources.selection.start.line
+        
+        if lines[selectedLine].isEmpty && !lines[selectedLine + 1].isEmpty {
+            self.insertionLine = sources.selection.start.line + 1
+        } else {
+            self.insertionLine = sources.selection.start.line
+        }
     }
         
     public var insertionLine: Int?

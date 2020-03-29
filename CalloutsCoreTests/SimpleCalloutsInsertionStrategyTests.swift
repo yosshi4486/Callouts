@@ -22,10 +22,12 @@ class SimpleCalloutsInsertionStrategyTests: XCTestCase {
 
     func testSimpleCalloutsInsertionStrategy() {
         
+        let testLines = ["// Copylight", "", "class Foo { }"]
+        
         let parameterizedTestCases : [TestCase] = [
-            (makeStub(lines: ["", "something", ""], startLine: 0), expectedInsertionLine: 0),
-            (makeStub(lines: ["", "something", ""], startLine: 1), expectedInsertionLine: 1),
-            (makeStub(lines: ["", "something", ""], startLine: 2), expectedInsertionLine: 2),
+            (makeStub(lines: NSMutableArray(array: testLines), startLine: 0), expectedInsertionLine: 0),
+            (makeStub(lines: NSMutableArray(array: testLines), startLine: 1), expectedInsertionLine: 2),
+            (makeStub(lines: NSMutableArray(array: testLines), startLine: 2), expectedInsertionLine: 2),
         ]
         
         for testCase in parameterizedTestCases {
@@ -40,8 +42,7 @@ class SimpleCalloutsInsertionStrategyTests: XCTestCase {
                          contentUTI: "",
                          lines: lines,
                          selections: .init(),
-                         selection: .init(start: .init(line: startLine, column: 0),
-                                          end: .init(line: 0, column: 0)),
+                         selection: SourceTextRange(start: .init(line: startLine, column: 0), end: .init(line: 0, column: 0)),
                          indentationWidh: 0,
                          usesTabsForIndentation: true,
                          tabWidth: 0)

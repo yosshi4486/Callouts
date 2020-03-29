@@ -44,11 +44,7 @@ class CalloutsInserterTests: XCTestCase {
     let contentUIT = "public.swift-source"
     
     var lines: NSMutableArray!
-    
-    let selections: NSMutableArray = [SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))]
-    
-    let selection: SourceTextRange = SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))
-    
+        
     let indentationWidth = 4
     
     let usesTabsForIndentation = false
@@ -69,7 +65,12 @@ class CalloutsInserterTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testCalloutsInserterWhenSimpleStrategy() {
+    func testCalloutsInserterWhenSimpleStrategyWhenCursorIsOnEmptyLine() {
+        
+        let selections: NSMutableArray = [SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))]
+        
+        let selection: SourceTextRange = SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))
+
         let sources = InsertionSources(completeBuffer: completeBuffer,
                                        contentUTI: contentUIT,
                                        lines: lines,
@@ -84,5 +85,27 @@ class CalloutsInserterTests: XCTestCase {
         
         XCTAssertEqual(sources.lines[11] as! String, "/// - Attention: \(plahocelder)")
     }
+    
+    func testCalloutsInserterWhenSimpleStrategyWhenCursorIsOnSymbolLine() {
+        
+        let selections: NSMutableArray = [SourceTextRange(start: .init(line: 12, column: 0), end: .init(line: 12, column: 0))]
+        
+        let selection: SourceTextRange = SourceTextRange(start: .init(line: 12, column: 0), end: .init(line: 12, column: 0))
+
+        let sources = InsertionSources(completeBuffer: completeBuffer,
+                                       contentUTI: contentUIT,
+                                       lines: lines,
+                                       selections: selections,
+                                       selection: selection,
+                                       indentationWidh: indentationWidth,
+                                       usesTabsForIndentation: usesTabsForIndentation,
+                                       tabWidth: tabWidth)
+        let strategy = SimpleCalloutsInsertionStrategy(sources: sources)
+        let calloutsInserter = CalloutsInserter(sources: sources, storategy: strategy, callouts: Attention())
+        calloutsInserter.insert()
+        
+        XCTAssertEqual(sources.lines[12] as! String, "/// - Attention: \(plahocelder)")
+    }
+
     
 }
