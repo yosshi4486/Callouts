@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1878CEE5243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */; };
+		1878CEE724307D070055D47C /* SimpleCalloutsInsertionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE624307D070055D47C /* SimpleCalloutsInsertionStrategy.swift */; };
+		1878CEE924307D260055D47C /* CalloutsInsertionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE824307D260055D47C /* CalloutsInsertionStrategy.swift */; };
 		18BF801D24302E5B0051239D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF801C24302E5B0051239D /* AppDelegate.swift */; };
 		18BF801F24302E5B0051239D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF801E24302E5B0051239D /* ContentView.swift */; };
 		18BF802124302E5C0051239D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF802024302E5C0051239D /* Assets.xcassets */; };
@@ -94,6 +97,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalloutsInsertionStrategyTests.swift; sourceTree = "<group>"; };
+		1878CEE624307D070055D47C /* SimpleCalloutsInsertionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalloutsInsertionStrategy.swift; sourceTree = "<group>"; };
+		1878CEE824307D260055D47C /* CalloutsInsertionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutsInsertionStrategy.swift; sourceTree = "<group>"; };
 		18BF801924302E5B0051239D /* Callouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Callouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF801C24302E5B0051239D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BF801E24302E5B0051239D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -265,6 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				18BF806624303C0D0051239D /* Attention.swift */,
+				1878CEE824307D260055D47C /* CalloutsInsertionStrategy.swift */,
+				1878CEE624307D070055D47C /* SimpleCalloutsInsertionStrategy.swift */,
 				18BF80B12430431A0051239D /* CalloutsCore.h */,
 				18BF80B22430431A0051239D /* Info.plist */,
 			);
@@ -275,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				18BF80D8243043E40051239D /* AttentionTests.swift */,
+				1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */,
 				18BF80C02430431A0051239D /* Info.plist */,
 			);
 			path = CalloutsCoreTests;
@@ -549,7 +558,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1878CEE924307D260055D47C /* CalloutsInsertionStrategy.swift in Sources */,
 				18BF80D7243043B90051239D /* Attention.swift in Sources */,
+				1878CEE724307D070055D47C /* SimpleCalloutsInsertionStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BF80DA243044640051239D /* AttentionTests.swift in Sources */,
+				1878CEE5243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
