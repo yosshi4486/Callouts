@@ -9,14 +9,12 @@
 import Foundation
 
 /// This strategy only returns a selected line for insertion.
-struct SimpleCalloutsInsertionStrategy : CalloutsInsertionStrategy {
+public struct SimpleCalloutsInsertionStrategy : CalloutsInsertionStrategy {
     
-    var lines : [String]
-    
-    var selectedLine : Int
-    
-    var insertionLine: Int? {
-        return selectedLine
+    public init(sources: InsertionSources) {
+        self.insertionLine = sources.selection.start.line
     }
-            
+        
+    public var insertionLine: Int?
+
 }

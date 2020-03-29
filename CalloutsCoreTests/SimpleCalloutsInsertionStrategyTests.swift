@@ -10,7 +10,7 @@ import XCTest
 @testable import CalloutsCore
 
 class SimpleCalloutsInsertionStrategyTests: XCTestCase {
-    typealias TestCase = (lines: [String], selectedAt: Int, expectedInsertionLine: Int?)
+    typealias TestCase = (sources: InsertionSources, expectedInsertionLine: Int)
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -23,15 +23,27 @@ class SimpleCalloutsInsertionStrategyTests: XCTestCase {
     func testSimpleCalloutsInsertionStrategy() {
         
         let parameterizedTestCases : [TestCase] = [
-            TestCase(lines: ["", "something", ""], selectedAt: 0, expectedInsertionLine: 0),
-            TestCase(lines: ["", "something", ""], selectedAt: 1, expectedInsertionLine: 1),
-            TestCase(lines: ["", "something", ""], selectedAt: 2, expectedInsertionLine: 2)
+            (makeStub(lines: ["", "something", ""], startLine: 0), expectedInsertionLine: 0),
+            (makeStub(lines: ["", "something", ""], startLine: 1), expectedInsertionLine: 1),
+            (makeStub(lines: ["", "something", ""], startLine: 2), expectedInsertionLine: 2),
         ]
         
         for testCase in parameterizedTestCases {
-            let strategy = SimpleCalloutsInsertionStrategy(lines: testCase.lines, selectedLine: testCase.selectedAt)
+            let strategy = SimpleCalloutsInsertionStrategy(sources: testCase.sources)
             XCTAssertEqual(strategy.insertionLine, testCase.expectedInsertionLine)
         }
         
+    }
+    
+    private func makeStub(lines: NSMutableArray, startLine: Int) -> InsertionSources {
+        InsertionSources(completeBuffer: "",
+                         contentUTI: "",
+                         lines: lines,
+                         selections: .init(),
+                         selection: .init(start: .init(line: startLine, column: 0),
+                                          end: .init(line: 0, column: 0)),
+                         indentationWidh: 0,
+                         usesTabsForIndentation: true,
+                         tabWidth: 0)
     }
 }

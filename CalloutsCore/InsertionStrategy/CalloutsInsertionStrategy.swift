@@ -9,8 +9,10 @@
 import Foundation
 
 // A interface to replace flexibly insertion algorithm.
-protocol CalloutsInsertionStrategy {
-        
+public protocol CalloutsInsertionStrategy {
+    
+    init(sources: InsertionSources)
+    
     // The line position for insertion. If it can't insert callouts, the value be nil.
     var insertionLine : Int? { get }
     
