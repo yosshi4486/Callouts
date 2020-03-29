@@ -30,7 +30,7 @@ public struct CalloutsInserter {
     public func insert() {
         
         if let insertionLine = strategy.insertionLine {
-            let spaces = String(repeating: " ", count: sources.indentationWidh)
+            let spaces = String(repeating: " ", count: sources.selection.start.column)
             let calloutsText = spaces + String(describing: callouts)
             sources.lines.insert(calloutsText, at: insertionLine)
         }
