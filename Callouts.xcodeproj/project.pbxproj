@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1878CEE5243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */; };
+		1878CEE724307D070055D47C /* SimpleCalloutsInsertionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE624307D070055D47C /* SimpleCalloutsInsertionStrategy.swift */; };
+		1878CEE924307D260055D47C /* CalloutsInsertionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE824307D260055D47C /* CalloutsInsertionStrategy.swift */; };
+		1878CEEB243091E60055D47C /* CalloutsInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEEA243091E60055D47C /* CalloutsInserter.swift */; };
+		1878CEED2430952F0055D47C /* Callouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEEC2430952F0055D47C /* Callouts.swift */; };
+		1878CEF024309D310055D47C /* SourceTextRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEEF24309D310055D47C /* SourceTextRange.swift */; };
+		1878CEF224309D480055D47C /* SourceTextPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEF124309D480055D47C /* SourceTextPosition.swift */; };
+		1878CEF42430A2420055D47C /* InsertionSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEF32430A2420055D47C /* InsertionSources.swift */; };
+		1878CEF92430A8130055D47C /* XcodeKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEF82430A8130055D47C /* XcodeKitExtensions.swift */; };
+		1878CEFD2430AA300055D47C /* CalloutsInserterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEFC2430AA300055D47C /* CalloutsInserterTests.swift */; };
 		18BF801D24302E5B0051239D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF801C24302E5B0051239D /* AppDelegate.swift */; };
 		18BF801F24302E5B0051239D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF801E24302E5B0051239D /* ContentView.swift */; };
 		18BF802124302E5C0051239D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF802024302E5C0051239D /* Assets.xcassets */; };
@@ -94,6 +104,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalloutsInsertionStrategyTests.swift; sourceTree = "<group>"; };
+		1878CEE624307D070055D47C /* SimpleCalloutsInsertionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCalloutsInsertionStrategy.swift; sourceTree = "<group>"; };
+		1878CEE824307D260055D47C /* CalloutsInsertionStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutsInsertionStrategy.swift; sourceTree = "<group>"; };
+		1878CEEA243091E60055D47C /* CalloutsInserter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutsInserter.swift; sourceTree = "<group>"; };
+		1878CEEC2430952F0055D47C /* Callouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Callouts.swift; sourceTree = "<group>"; };
+		1878CEEF24309D310055D47C /* SourceTextRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextRange.swift; sourceTree = "<group>"; };
+		1878CEF124309D480055D47C /* SourceTextPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextPosition.swift; sourceTree = "<group>"; };
+		1878CEF32430A2420055D47C /* InsertionSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSources.swift; sourceTree = "<group>"; };
+		1878CEF82430A8130055D47C /* XcodeKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeKitExtensions.swift; sourceTree = "<group>"; };
+		1878CEFC2430AA300055D47C /* CalloutsInserterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalloutsInserterTests.swift; sourceTree = "<group>"; };
+		1878CEFF2430CAEE0055D47C /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		18BF801924302E5B0051239D /* Callouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Callouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BF801C24302E5B0051239D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18BF801E24302E5B0051239D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -174,6 +195,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1878CEEE243095FD0055D47C /* Callouts */ = {
+			isa = PBXGroup;
+			children = (
+				1878CEEC2430952F0055D47C /* Callouts.swift */,
+				18BF806624303C0D0051239D /* Attention.swift */,
+			);
+			path = Callouts;
+			sourceTree = "<group>";
+		};
+		1878CEF62430A5C00055D47C /* InsertionStrategy */ = {
+			isa = PBXGroup;
+			children = (
+				1878CEE824307D260055D47C /* CalloutsInsertionStrategy.swift */,
+				1878CEE624307D070055D47C /* SimpleCalloutsInsertionStrategy.swift */,
+			);
+			path = InsertionStrategy;
+			sourceTree = "<group>";
+		};
+		1878CEF72430A5C90055D47C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				1878CEF32430A2420055D47C /* InsertionSources.swift */,
+				1878CEEF24309D310055D47C /* SourceTextRange.swift */,
+				1878CEF124309D480055D47C /* SourceTextPosition.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		18BF801024302E5B0051239D = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +293,7 @@
 		18BF8053243037B20051239D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1878CEFF2430CAEE0055D47C /* XcodeKit.framework */,
 				18BF8054243037B20051239D /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -255,6 +305,7 @@
 				18BF8057243037B20051239D /* SourceEditorExtension.swift */,
 				18BF8059243037B20051239D /* CalloutsCommand.swift */,
 				18BF80E3243047CD0051239D /* AttentionCommand.swift */,
+				1878CEF82430A8130055D47C /* XcodeKitExtensions.swift */,
 				18BF805B243037B20051239D /* Info.plist */,
 				18BF805C243037B20051239D /* CalloutsExtension.entitlements */,
 			);
@@ -264,7 +315,10 @@
 		18BF80B02430431A0051239D /* CalloutsCore */ = {
 			isa = PBXGroup;
 			children = (
-				18BF806624303C0D0051239D /* Attention.swift */,
+				1878CEEA243091E60055D47C /* CalloutsInserter.swift */,
+				1878CEEE243095FD0055D47C /* Callouts */,
+				1878CEF62430A5C00055D47C /* InsertionStrategy */,
+				1878CEF72430A5C90055D47C /* DataSource */,
 				18BF80B12430431A0051239D /* CalloutsCore.h */,
 				18BF80B22430431A0051239D /* Info.plist */,
 			);
@@ -275,6 +329,8 @@
 			isa = PBXGroup;
 			children = (
 				18BF80D8243043E40051239D /* AttentionTests.swift */,
+				1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */,
+				1878CEFC2430AA300055D47C /* CalloutsInserterTests.swift */,
 				18BF80C02430431A0051239D /* Info.plist */,
 			);
 			path = CalloutsCoreTests;
@@ -541,6 +597,7 @@
 			files = (
 				18BF8058243037B20051239D /* SourceEditorExtension.swift in Sources */,
 				18BF80E4243047CD0051239D /* AttentionCommand.swift in Sources */,
+				1878CEF92430A8130055D47C /* XcodeKitExtensions.swift in Sources */,
 				18BF805A243037B20051239D /* CalloutsCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -549,7 +606,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1878CEF42430A2420055D47C /* InsertionSources.swift in Sources */,
+				1878CEEB243091E60055D47C /* CalloutsInserter.swift in Sources */,
+				1878CEF224309D480055D47C /* SourceTextPosition.swift in Sources */,
+				1878CEF024309D310055D47C /* SourceTextRange.swift in Sources */,
+				1878CEED2430952F0055D47C /* Callouts.swift in Sources */,
+				1878CEE924307D260055D47C /* CalloutsInsertionStrategy.swift in Sources */,
 				18BF80D7243043B90051239D /* Attention.swift in Sources */,
+				1878CEE724307D070055D47C /* SimpleCalloutsInsertionStrategy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +621,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1878CEFD2430AA300055D47C /* CalloutsInserterTests.swift in Sources */,
 				18BF80DA243044640051239D /* AttentionTests.swift in Sources */,
+				1878CEE5243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
