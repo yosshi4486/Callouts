@@ -230,6 +230,16 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		1878CF0C2431AE2C0055D47C /* CalloutsTests */ = {
+			isa = PBXGroup;
+			children = (
+				1878CF0A2431A6CB0055D47C /* CalloutsTests.swift */,
+				18BF80D8243043E40051239D /* AttentionTests.swift */,
+				1878CF082431A6A60055D47C /* AuthorTests.swift */,
+			);
+			path = CalloutsTests;
+			sourceTree = "<group>";
+		};
 		18BF801024302E5B0051239D = {
 			isa = PBXGroup;
 			children = (
@@ -335,9 +345,7 @@
 		18BF80BD2430431A0051239D /* CalloutsCoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				1878CF0A2431A6CB0055D47C /* CalloutsTests.swift */,
-				18BF80D8243043E40051239D /* AttentionTests.swift */,
-				1878CF082431A6A60055D47C /* AuthorTests.swift */,
+				1878CF0C2431AE2C0055D47C /* CalloutsTests */,
 				1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */,
 				1878CEFC2430AA300055D47C /* CalloutsInserterTests.swift */,
 				18BF80C02430431A0051239D /* Info.plist */,
