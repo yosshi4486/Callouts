@@ -8,13 +8,31 @@
 
 import Foundation
 import XcodeKit
+import CalloutsCore
 
 class CalloutsCommand: NSObject, XCSourceEditorCommand {
     
+    var callouts: Callouts { fatalError() }
+    
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
-        // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
         
-        completionHandler(nil)
+        do {
+            let sources = try invocation.buffer.asInsertionSources()
+            let strategy = SimpleCalloutsInsertionStrategy(sources: sources)
+            let calloutsInserter = CalloutsInserter(sources: sources,
+                                                    storategy: strategy,
+                                                    callouts: callouts)
+            
+            calloutsInserter.insert { (line, text, newSelection) in
+                invocation.buffer.lines.insert(text, at: line)
+                invocation.buffer.selections[0] = newSelection.asXCSourceTextRange()
+            }
+                            
+            completionHandler(nil)
+        } catch {
+            completionHandler(error)
+        }
+
     }
     
 }

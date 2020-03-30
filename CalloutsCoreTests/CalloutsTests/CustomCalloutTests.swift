@@ -13,6 +13,6 @@ class CustomCalloutsTests: CalloutsTests {
     
     override var callouts: Callouts { CustomCallout() }
     
-    override var expectedText: String { "/// - Callout(\(placeholder(for: "custom title string")): \(placeholder(for: "description"))" }
+    override var expectedText: String { "/// - Callout(\(placeholder(for: "custom title string"))): \(placeholder(for: "description"))" }
     
 }

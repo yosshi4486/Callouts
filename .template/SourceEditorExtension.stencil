@@ -1,0 +1,39 @@
+//
+//  SourceEditorExtension.swift
+//  CalloutsExtension
+//
+//  Created by yosshi4486 on 2020/03/29
+//  Copyright © 2020 RAISO. All rights reserved.
+//
+
+import Foundation
+import XcodeKit
+import CalloutsCore
+
+class SourceEditorExtension: NSObject, XCSourceEditorExtension {
+    
+    /*
+    func extensionDidFinishLaunching() {
+        // If your extension needs to do any work at launch, implement this optional method.
+    }
+    */
+    
+    // I had tried to use this generate code, but commandDefinitions is buggy and occur crash. so I decided to use plist.
+    {# var commandDefinitions: [[XCSourceEditorCommandDefinitionKey: Any]] {
+        return [
+            {% for type in types.structs %}
+                {% if type.kind != "protocol" %}
+                [
+                    .classNameKey : "{{ argument.PRODUCT_MODULE_NAME }}.{{ type.name }}Command",
+                    .identifierKey : "{{ argument.PRODUCT_BUNDLE_IDENTIFIER }}.{{ type.name }}Command", 
+                    .nameKey : "{{ type.name }}().displayName"
+                ]
+                {% ifnot forloop.last %}
+                ,
+                {% endif %}
+                {% endif %}
+            {% endfor %}
+        ]
+    }
+     #}
+}

@@ -20,6 +20,11 @@ public protocol Callouts : CustomStringConvertible {
     /// Default implementation provided.
     var name: String { get }
     
+    /// The display name
+    ///
+    /// Default implementation provided
+    var displayName: String { get }
+    
     /// The detail of callouts e.g. author name or description.
     ///
     /// Default implementation provided.
@@ -34,6 +39,8 @@ public protocol Callouts : CustomStringConvertible {
 public extension Callouts {
         
     var name: String { String(describing: type(of: self)) }
+    
+    var displayName: String { name }
     
     var detail: String { "description" }
     

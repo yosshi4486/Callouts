@@ -14,5 +14,7 @@ public struct CustomCallout : Callouts {
     
     public var name: String { "Callout" }
     
-    public var format: String { "/// - Callout(\(placeholder(for: "custom title string")): \(placeholder(for: detail))" }
+    public var displayName: String { "Custom Callout" }
+    
+    public var format: String { "/// - Callout(\(placeholder(for: "custom title string"))): \(placeholder(for: detail))" }
 }
