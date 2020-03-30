@@ -12,25 +12,6 @@ import CalloutsCore
 
 final class AttentionCommand : CalloutsCommand {
     
-    override func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
-        
-        do {
-            let sources = try invocation.buffer.asInsertionSources()
-            let strategy = SimpleCalloutsInsertionStrategy(sources: sources)
-            let callouts = Attention()
-            let calloutsInserter = CalloutsInserter(sources: sources,
-                                                    storategy: strategy,
-                                                    callouts: callouts)
-            
-            calloutsInserter.insert { (line, text, newSelection) in
-                invocation.buffer.lines[line] = text
-                invocation.buffer.selections[0] = newSelection.asXCSourceTextRange()
-            }
-                            
-            completionHandler(nil)
-        } catch {
-            completionHandler(error)
-        }
-    }
+    override var callouts: Callouts { Attention() }
     
 }
