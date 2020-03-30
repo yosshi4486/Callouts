@@ -9,26 +9,10 @@
 import XCTest
 @testable import CalloutsCore
 
-class AttentionTests: XCTestCase {
+class AttentionTests: CalloutsTests {
 
-    // To avoid recognition of Xcode as placeholder.
-    var plahocelder: String {
-        ["<#",
-        "description",
-        "#>"].joined()
-    }
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testAttention() {
-        XCTAssertEqual(String(describing: Attention()), "/// - Attention: \(plahocelder)")
-        print(String(describing: Attention()))
-    }
-
+    override var callouts: Callouts {  Attention() }
+    
+    override var expectedText: String { "/// - Attention: \(placeholder(for: "description"))" }
+        
 }
