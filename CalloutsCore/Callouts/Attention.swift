@@ -9,6 +9,7 @@
 import Foundation
 
 public struct Attention : Callouts {
-    public var name: String { "Attention" }
+    
     public init() { }
+
 }
