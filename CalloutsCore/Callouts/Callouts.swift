@@ -18,18 +18,25 @@ public protocol Callouts : CustomStringConvertible {
     /// The name of callouts e.g. Note, Author or Sample.
     var name: String { get }
     
+    /// The detail of callouts e.g. author name or description.
+    var detail: String { get }
+    
+    /// The format of callouts
+    ///
+    /// default implementation provided
+    var format: String { get }
 }
 
 public extension Callouts {
     
-    var plahocelder: String {
+    func placeholder(for text: String) -> String {
         ["<#",
-        "description",
+        text,
         "#>"].joined()
     }
     
-    var description: String {
-        "/// - \(name): \(plahocelder)"
-    }
+    var description: String { format }
+    
+    var format: String { "/// - \(name): \(placeholder(for: detail))" }
     
 }
