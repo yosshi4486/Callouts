@@ -31,15 +31,18 @@ extension XCSourceTextBuffer {
     
     func asInsertionSources() throws -> InsertionSources {
         
-        guard let selection = selections.firstObject as? XCSourceTextRange else {
+        let sourceTextRanges = selections
+            .compactMap { $0 as? XCSourceTextRange }
+            .map { $0.asSourceTextRange() }
+        
+        guard !sourceTextRanges.isEmpty else {
             throw NSError(domain: "Callouts", code: 401, userInfo: ["reason" : "None selection"])
         }
         
         return InsertionSources(completeBuffer: completeBuffer,
                                 contentUTI: contentUTI,
-                                lines: lines,
-                                selections: selections,
-                                selection: selection.asSourceTextRange(),
+                                lines: lines as! [String],
+                                selections: sourceTextRanges,
                                 indentationWidh: indentationWidth,
                                 usesTabsForIndentation: usesTabsForIndentation,
                                 tabWidth: tabWidth)

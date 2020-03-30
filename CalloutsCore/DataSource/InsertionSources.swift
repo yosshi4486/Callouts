@@ -8,14 +8,15 @@
 
 import Foundation
 
-/// A type represent data source.
+/// A type represent data source that doesn't make any changes to incocation buffer.
+///
+/// All of property is value type.
 public struct InsertionSources {
     
     public init(completeBuffer: String,
                 contentUTI: String,
-                lines: NSMutableArray,
-                selections: NSMutableArray,
-                selection: SourceTextRange,
+                lines: [String],
+                selections: [SourceTextRange],
                 indentationWidh: Int,
                 usesTabsForIndentation: Bool,
                 tabWidth: Int) {
@@ -23,7 +24,6 @@ public struct InsertionSources {
         self.contentUTI = contentUTI
         self.lines = lines
         self.selections = selections
-        self.selection = selection
         self.indentationWidh = indentationWidh
         self.usesTabsForIndentation = usesTabsForIndentation
         self.tabWidth = tabWidth
@@ -36,16 +36,13 @@ public struct InsertionSources {
     public var contentUTI: String
     
     /// The lines of text in the buffer, including line endings.
-    ///
-    /// The collection is reference type to effect source lines.
-    public var lines: NSMutableArray
+    public var lines: [String]
     
     /// The text selections in the buffer.
-    public var selections: NSMutableArray
-    
-    /// The text selection.
-    public var selection: SourceTextRange
-    
+    ///
+    /// - Precondition: The collection is not empty.
+    public var selections: [SourceTextRange]
+        
     /// The number of space characters used for indentation of the text in the buffer.
     public var indentationWidh: Int
     

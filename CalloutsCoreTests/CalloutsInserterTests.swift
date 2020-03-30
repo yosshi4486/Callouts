@@ -43,7 +43,7 @@ class CalloutsInserterTests: XCTestCase {
 
     let contentUIT = "public.swift-source"
     
-    var lines: NSMutableArray!
+    var lines: [String] = []
         
     let indentationWidth = 4
     
@@ -58,7 +58,7 @@ class CalloutsInserterTests: XCTestCase {
     }
 
     override func setUpWithError() throws {
-        self.lines = NSMutableArray(array: completeBuffer.split(separator: "\n").map { String($0) })
+        self.lines = completeBuffer.split(separator: "\n").map { String($0) }
     }
 
     override func tearDownWithError() throws {
@@ -67,44 +67,40 @@ class CalloutsInserterTests: XCTestCase {
 
     func testCalloutsInserterWhenSimpleStrategyWhenCursorIsOnEmptyLine() {
         
-        let selections: NSMutableArray = [SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))]
-        
-        let selection: SourceTextRange = SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))
+        let selections: [SourceTextRange] = [SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))]
+        let mutableLines = NSMutableArray(array: lines)
 
         let sources = InsertionSources(completeBuffer: completeBuffer,
                                        contentUTI: contentUIT,
                                        lines: lines,
                                        selections: selections,
-                                       selection: selection,
                                        indentationWidh: indentationWidth,
                                        usesTabsForIndentation: usesTabsForIndentation,
                                        tabWidth: tabWidth)
         let strategy = SimpleCalloutsInsertionStrategy(sources: sources)
         let calloutsInserter = CalloutsInserter(sources: sources, storategy: strategy, callouts: Attention())
-        calloutsInserter.insert()
+        calloutsInserter.insert(into: mutableLines)
         
-        XCTAssertEqual(sources.lines[11] as! String, "/// - Attention: \(plahocelder)")
+        XCTAssertEqual(mutableLines[11] as! String, "/// - Attention: \(plahocelder)")
     }
     
     func testCalloutsInserterWhenSimpleStrategyWhenCursorIsOnSymbolLine() {
         
-        let selections: NSMutableArray = [SourceTextRange(start: .init(line: 12, column: 0), end: .init(line: 12, column: 0))]
-        
-        let selection: SourceTextRange = SourceTextRange(start: .init(line: 12, column: 0), end: .init(line: 12, column: 0))
+        let selections: [SourceTextRange] = [SourceTextRange(start: .init(line: 12, column: 0), end: .init(line: 12, column: 0))]
+        let mutableLines = NSMutableArray(array: lines)
 
         let sources = InsertionSources(completeBuffer: completeBuffer,
                                        contentUTI: contentUIT,
                                        lines: lines,
                                        selections: selections,
-                                       selection: selection,
                                        indentationWidh: indentationWidth,
                                        usesTabsForIndentation: usesTabsForIndentation,
                                        tabWidth: tabWidth)
         let strategy = SimpleCalloutsInsertionStrategy(sources: sources)
         let calloutsInserter = CalloutsInserter(sources: sources, storategy: strategy, callouts: Attention())
-        calloutsInserter.insert()
+        calloutsInserter.insert(into: mutableLines)
         
-        XCTAssertEqual(sources.lines[12] as! String, "/// - Attention: \(plahocelder)")
+        XCTAssertEqual(mutableLines[12] as! String, "/// - Attention: \(plahocelder)")
     }
 
     

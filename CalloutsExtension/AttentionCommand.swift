@@ -22,12 +22,12 @@ final class AttentionCommand : CalloutsCommand {
                                                     storategy: strategy,
                                                     callouts: callouts)
             
-            calloutsInserter.insert()
+            calloutsInserter.insert(into: invocation.buffer.lines)
             
-            sources.selections[0] = XCSourceTextRange(start: .init(line: strategy.insertionLine!,
-                                                                   column: sources.selection.end.column + String(describing: callouts).count - 1),
-                                                      end: .init(line: strategy.insertionLine!,
-                                                                 column: sources.selection.end.column + String(describing: callouts).count - 1))
+            invocation.buffer.selections[0] = XCSourceTextRange(start: .init(line: strategy.insertionLine!,
+                                                                             column: sources.selections[0].end.column + String(describing: callouts).count - 1),
+                                                                end: .init(line: strategy.insertionLine!,
+                                                                           column: sources.selections[0].end.column + String(describing: callouts).count - 1))
             completionHandler(nil)
         } catch {
             completionHandler(error)

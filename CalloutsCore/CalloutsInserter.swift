@@ -27,12 +27,14 @@ public struct CalloutsInserter {
     public var callouts: Callouts
         
     /// The insert() have side effect changing sources.
-    public func insert() {
+    ///
+    /// - Attention: sourceTextLines are changed values after executing this function.
+    public func insert(into sourceTextLines: NSMutableArray) {
         
         if let insertionLine = strategy.insertionLine {
-            let spaces = String(repeating: " ", count: sources.selection.start.column)
+            let spaces = String(repeating: " ", count: sources.selections[0].start.column)
             let calloutsText = spaces + String(describing: callouts)
-            sources.lines.insert(calloutsText, at: insertionLine)
+            sourceTextLines.insert(calloutsText, at: insertionLine)
         }
         
     }
