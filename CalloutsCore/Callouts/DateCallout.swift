@@ -1,5 +1,5 @@
 //
-//  Author.swift
+//  DateCallout.swift
 //  CalloutsCore
 //
 //  Created by yosshi4486 on 2020/03/30
@@ -8,10 +8,11 @@
 
 import Foundation
 
-public struct Author : Callouts {
+public struct DateCallout : Callouts {
     
     public init() { }
-        
-    public var detail: String { "author name" }
+    
+    public var name: String { "Date" }
+    
     
 }

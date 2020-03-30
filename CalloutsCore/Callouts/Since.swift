@@ -1,5 +1,5 @@
 //
-//  Author.swift
+//  Since.swift
 //  CalloutsCore
 //
 //  Created by yosshi4486 on 2020/03/30
@@ -8,10 +8,8 @@
 
 import Foundation
 
-public struct Author : Callouts {
+public struct Since : Callouts {
     
     public init() { }
-        
-    public var detail: String { "author name" }
     
 }
