@@ -1,3 +1,6 @@
+// Generated using Sourcery 0.17.0 — https://github.com/krzysztofzablocki/Sourcery
+// DO NOT EDIT
+
 //
 //  SourceEditorExtension.swift
 //  CalloutsExtension
@@ -8,20 +11,13 @@
 
 import Foundation
 import XcodeKit
+import CalloutsCore
 
 class SourceEditorExtension: NSObject, XCSourceEditorExtension {
-    
     /*
     func extensionDidFinishLaunching() {
         // If your extension needs to do any work at launch, implement this optional method.
     }
     */
-    
-    /*
-    var commandDefinitions: [[XCSourceEditorCommandDefinitionKey: Any]] {
-        // If your extension needs to return a collection of command definitions that differs from those in its Info.plist, implement this optional property getter.
-        return []
-    }
-    */
-    
+    // I had tried to use this generate code, but commandDefinitions is buggy and occur crash. so I decided to use plist.
 }

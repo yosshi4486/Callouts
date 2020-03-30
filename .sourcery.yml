@@ -1,0 +1,9 @@
+sources:
+    - CalloutsCore/Callouts
+templates:
+    - .template/
+output:
+    CalloutsExtension/
+args:
+    PRODUCT_MODULE_NAME: CalloutsExtension
+    PRODUCT_BUNDLE_IDENTIFIER: com.raiso.Callouts.CalloutsExtension

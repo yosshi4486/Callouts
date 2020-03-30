@@ -12,4 +12,5 @@ public struct SeeAlso : Callouts {
     
     public init() { }
     
+    public var displayName: String { "See Also" }
 }

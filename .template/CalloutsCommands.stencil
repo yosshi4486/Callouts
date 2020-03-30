@@ -1,0 +1,20 @@
+//
+//  CalloutsCommands.swift
+//  CalloutsCore
+//
+//  Created by yosshi4486
+//  Copyright © 2020 RAISO. All rights reserved.
+//
+
+import Foundation
+import XcodeKit
+import CalloutsCore
+
+{% for type in types.structs %}
+{% if type.kind != "protocol" %}
+final class {{ type.name }}Command : CalloutsCommand {
+    override var callouts: Callouts { {{ type.name}}() }
+}
+
+{% endif %}
+{% endfor %}
