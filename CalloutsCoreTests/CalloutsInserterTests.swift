@@ -68,7 +68,6 @@ class CalloutsInserterTests: XCTestCase {
     func testCalloutsInserterWhenSimpleStrategyWhenCursorIsOnEmptyLine() {
         
         let selections: [SourceTextRange] = [SourceTextRange(start: .init(line: 11, column: 0), end: .init(line: 11, column: 0))]
-        let mutableLines = NSMutableArray(array: lines)
 
         let sources = InsertionSources(completeBuffer: completeBuffer,
                                        contentUTI: contentUIT,
@@ -78,16 +77,20 @@ class CalloutsInserterTests: XCTestCase {
                                        usesTabsForIndentation: usesTabsForIndentation,
                                        tabWidth: tabWidth)
         let strategy = SimpleCalloutsInsertionStrategy(sources: sources)
-        let calloutsInserter = CalloutsInserter(sources: sources, storategy: strategy, callouts: Attention())
-        calloutsInserter.insert(into: mutableLines)
+        let callouts =  Attention()
+        let calloutsInserter = CalloutsInserter(sources: sources, storategy: strategy, callouts: callouts)
+        calloutsInserter.insert { (line, text, selection) in
+            XCTAssertEqual(line, 11)
+            XCTAssertEqual(text, "/// - Attention: \(plahocelder)")
+            XCTAssertEqual(selection, SourceTextRange(start: .init(line: 11, column: String(describing: callouts).count - 1),
+                                                      end: .init(line: 11, column: String(describing: callouts).count - 1)))
+        }
         
-        XCTAssertEqual(mutableLines[11] as! String, "/// - Attention: \(plahocelder)")
     }
     
     func testCalloutsInserterWhenSimpleStrategyWhenCursorIsOnSymbolLine() {
         
         let selections: [SourceTextRange] = [SourceTextRange(start: .init(line: 12, column: 0), end: .init(line: 12, column: 0))]
-        let mutableLines = NSMutableArray(array: lines)
 
         let sources = InsertionSources(completeBuffer: completeBuffer,
                                        contentUTI: contentUIT,
@@ -97,10 +100,15 @@ class CalloutsInserterTests: XCTestCase {
                                        usesTabsForIndentation: usesTabsForIndentation,
                                        tabWidth: tabWidth)
         let strategy = SimpleCalloutsInsertionStrategy(sources: sources)
-        let calloutsInserter = CalloutsInserter(sources: sources, storategy: strategy, callouts: Attention())
-        calloutsInserter.insert(into: mutableLines)
+        let callouts =  Attention()
+        let calloutsInserter = CalloutsInserter(sources: sources, storategy: strategy, callouts: callouts)
         
-        XCTAssertEqual(mutableLines[12] as! String, "/// - Attention: \(plahocelder)")
+        calloutsInserter.insert { (line, text, selection) in
+            XCTAssertEqual(line, 12)
+            XCTAssertEqual(text, "/// - Attention: \(plahocelder)")
+            XCTAssertEqual(selection, SourceTextRange(start: .init(line: 12, column: String(describing: callouts).count - 1),
+                                                      end: .init(line: 12, column: String(describing: callouts).count - 1)))
+        }
     }
 
     

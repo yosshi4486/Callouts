@@ -10,6 +10,14 @@ import Foundation
 import XcodeKit
 import CalloutsCore
 
+extension SourceTextRange {
+    
+    func asXCSourceTextRange() -> XCSourceTextRange {
+        .init(start: .init(line: start.line, column: start.column),
+              end: .init(line: end.line, column: end.column))
+    }
+    
+}
 extension XCSourceTextPosition {
     
     func asSourceTextPosition() -> SourceTextPosition {

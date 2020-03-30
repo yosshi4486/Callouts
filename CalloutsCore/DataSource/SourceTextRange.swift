@@ -24,3 +24,5 @@ public struct SourceTextRange {
     /// The end position of the range.
     public var end: SourceTextPosition
 }
+
+extension SourceTextRange : Equatable { }

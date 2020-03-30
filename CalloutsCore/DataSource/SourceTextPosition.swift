@@ -24,3 +24,5 @@ public struct SourceTextPosition {
     public var line: Int
     
 }
+
+extension SourceTextPosition : Equatable { }
