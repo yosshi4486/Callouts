@@ -1,1 +1,32 @@
+Callouts for Xcodeは、「/// - Note:」や「/// - Attention:」などのCalloutsをコマンドで挿入し、
+あなたのAPI designがより良くなるのをお手伝いするXcode拡張機能です。
 
+「Editor > Callouts > Insert Attention」
+このようにコマンドを選択するだけでCalloutsが挿入されます。
+
+このアプリケーションでは以下のCalloutsをサポートしています。
+
+- Attention
+- Author
+- Authors
+- Bug
+- Complexity
+- Copyright
+- CustomCallout
+- Date
+- Example
+- Experiment
+- Important
+- Invariant
+- Note
+- Postcondition
+- Precondition
+- Remark
+- Requires
+- SeeAlso
+- Since
+- Version
+- Warning
+
+【利用方法】
+「AppleMenu > システム環境設定 > 拡張機能　> Xcode Source Editor」から、Calloutsをオンにしてください。

@@ -22,8 +22,8 @@ primary_category "MZGenre.Apps.DeveloperTools"
 # Metadata that are short and not change frequently
 
 name(
-    'en-US' => 'CalloutsInserter',
-    'ja' => 'CalloutsInserter'
+    'en-US' => 'Callouts for Xcode',
+    'ja' => 'Callouts for Xcode'
 )
 
 keywords(
@@ -32,8 +32,8 @@ keywords(
 )
 
 subtitle(
-    'en-US' => '',
-    'ja' => ''
+    'en-US' => 'The extension helps making good API design',
+    'ja' => '良いAPIデザインを作るお手伝いをします'
 )
 
 privacy_url(
