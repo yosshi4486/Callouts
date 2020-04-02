@@ -26,7 +26,7 @@ keywords(
 )
 
 subtitle(
-    'en-US' => 'The extension helps making good API design',
+    'en-US' => 'For good API design',
     'ja' => '良いAPIデザインを作るお手伝いをします'
 )
 
