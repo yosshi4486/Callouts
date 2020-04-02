@@ -1,0 +1,31 @@
+Callouts for Xcode inserts callouts like 「/// - Note:」or「/// - Attention:」 to help making good API desin.
+
+The extension inserts callouts only selecting command as following:
+「Editor > Callouts > Insert Attention」
+
+The extension supports these callouts:
+- Attention
+- Author
+- Authors
+- Bug
+- Complexity
+- Copyright
+- CustomCallout
+- Date
+- Example
+- Experiment
+- Important
+- Invariant
+- Note
+- Postcondition
+- Precondition
+- Remark
+- Requires
+- SeeAlso
+- Since
+- Version
+- Warning
+
+【How to use】
+Select checkbox in 「AppleMenu > System Preferences > Extensions > Xcode Source Editor > Callouts」
+

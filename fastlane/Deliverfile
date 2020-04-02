@@ -1,0 +1,42 @@
+# The Deliverfile allows you to store various App Store Connect metadata
+# For more information, check out the docs
+# https://docs.fastlane.tools/actions/deliver/
+
+# AppInformation
+platform "osx"
+
+app_identifier "com.raiso.Callouts.CalloutsExtension"
+
+# Comman Matadata
+
+languages ['en-US', 'ja']
+
+copyright "2020 yosshi4486."
+
+marketing_url "http://github.com/yosshi4486/Callouts"
+
+support_url "https://github.com/yosshi4486/Callouts/issues"
+
+primary_category "MZGenre.Apps.DeveloperTools"
+
+# Metadata that are short and not change frequently
+
+name(
+    'en-US' => 'Callouts for Xcode',
+    'ja' => 'Callouts for Xcode'
+)
+
+keywords(
+    'en-US' => ['Extension', 'Xcode'],
+    'ja' => ['Extension', 'Xcode']
+)
+
+subtitle(
+    'en-US' => 'The extension helps making good API design',
+    'ja' => '良いAPIデザインを作るお手伝いをします'
+)
+
+privacy_url(
+    'en-US' => 'https://yosshi4486.github.io/Callouts/PrivacyPolicy/ENGLISH',
+    'ja' => 'https://yosshi4486.github.io/Callouts/PrivacyPolicy/JAPANESE'
+)
