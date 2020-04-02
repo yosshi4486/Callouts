@@ -2,10 +2,7 @@
 # For more information, check out the docs
 # https://docs.fastlane.tools/actions/deliver/
 
-# AppInformation
 platform "osx"
-
-app_identifier "com.raiso.Callouts.CalloutsExtension"
 
 # Metadata that are short and not change frequently
 
