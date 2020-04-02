@@ -37,6 +37,6 @@ subtitle(
 )
 
 privacy_url(
-    'en-US' => '',
-    'ja' => ''
+    'en-US' => 'https://yosshi4486.github.io/Callouts/PrivacyPolicy/ENGLISH',
+    'ja' => 'https://yosshi4486.github.io/Callouts/PrivacyPolicy/JAPANESE'
 )
