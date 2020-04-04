@@ -11,14 +11,22 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        VStack {
+            Spacer()
+            Text("Welcome")
+            Spacer()
+            Text("Guidance")
+                .padding(.horizontal)
+            Spacer()
+        }
     }
+    
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environment(\.locale, .init(identifier: "ja"))
     }
 }

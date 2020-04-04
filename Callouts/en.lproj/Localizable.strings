@@ -1,0 +1,11 @@
+/* 
+  Localized.strings
+  Callouts
+
+  Created by yosshi4486 on 2020/04/04.
+  Copyright © 2020 RAISO. All rights reserved.
+*/
+
+"Welcome" = "Thank you for installing Callouts for Xcode!";
+
+"Guidance" = "This is a extension for Xcode, Please select checkbox in 「Apple menu > System Preferences > Extensions > Xcode Source Editor > Callouts」 and use from 「Xcode > Editor > Callouts」 commands.";
