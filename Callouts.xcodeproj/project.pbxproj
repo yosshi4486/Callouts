@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18495D5424386B49003A80DA /* CalloutsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BF80AF2430431A0051239D /* CalloutsCore.framework */; };
+		18495D5524386B49003A80DA /* CalloutsCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18BF80AF2430431A0051239D /* CalloutsCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18686FE62431DBFA0068864D /* SourceEditorExtension.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18686FE52431DBFA0068864D /* SourceEditorExtension.generated.swift */; };
 		1878CEE5243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE4243078A80055D47C /* SimpleCalloutsInsertionStrategyTests.swift */; };
 		1878CEE724307D070055D47C /* SimpleCalloutsInsertionStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1878CEE624307D070055D47C /* SimpleCalloutsInsertionStrategy.swift */; };
@@ -74,8 +76,6 @@
 		18BF80C12430431A0051239D /* CalloutsCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BF80B12430431A0051239D /* CalloutsCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18BF80D7243043B90051239D /* Attention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF806624303C0D0051239D /* Attention.swift */; };
 		18BF80DA243044640051239D /* AttentionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF80D8243043E40051239D /* AttentionTests.swift */; };
-		18BF80DB243045FD0051239D /* CalloutsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BF80AF2430431A0051239D /* CalloutsCore.framework */; };
-		18BF80DE243046020051239D /* CalloutsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BF80AF2430431A0051239D /* CalloutsCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,13 +114,6 @@
 			remoteGlobalIDString = 18BF801824302E5B0051239D;
 			remoteInfo = Callouts;
 		};
-		18BF80C22430431A0051239D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 18BF801124302E5B0051239D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18BF80AE2430431A0051239D;
-			remoteInfo = CalloutsCore;
-		};
 		18BF80CE243043220051239D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18BF801124302E5B0051239D /* Project object */;
@@ -131,6 +124,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		18495D5624386B49003A80DA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18495D5524386B49003A80DA /* CalloutsCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18BF8063243037B20051239D /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,7 +236,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BF80DB243045FD0051239D /* CalloutsCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BF80DE243046020051239D /* CalloutsCore.framework in Frameworks */,
+				18495D5424386B49003A80DA /* CalloutsCore.framework in Frameworks */,
 				18BF8055243037B20051239D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,7 +497,6 @@
 			);
 			dependencies = (
 				18BF805E243037B20051239D /* PBXTargetDependency */,
-				18BF80C32430431A0051239D /* PBXTargetDependency */,
 			);
 			name = Callouts;
 			productName = Callouts;
@@ -544,6 +546,7 @@
 				18BF804E243037B20051239D /* Sources */,
 				18BF804F243037B20051239D /* Frameworks */,
 				18BF8050243037B20051239D /* Resources */,
+				18495D5624386B49003A80DA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -826,11 +829,6 @@
 			isa = PBXTargetDependency;
 			target = 18BF801824302E5B0051239D /* Callouts */;
 			targetProxy = 18BF80BB2430431A0051239D /* PBXContainerItemProxy */;
-		};
-		18BF80C32430431A0051239D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18BF80AE2430431A0051239D /* CalloutsCore */;
-			targetProxy = 18BF80C22430431A0051239D /* PBXContainerItemProxy */;
 		};
 		18BF80CF243043220051239D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
